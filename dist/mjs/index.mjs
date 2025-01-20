@@ -1727,7 +1727,18 @@ const on = (element, event, handler, opts = void 0) => {
   element.addEventListener(event, handler, opts);
   return () => off(element, event, handler, opts);
 };
-const elementContains = (element, child) => !!element && !!child && (element === child || element.contains(child));
+const getDeepActiveElement = (child) => {
+  var _a;
+  let element = child;
+  while (element == null ? void 0 : element.shadowRoot) {
+    element = (_a = element == null ? void 0 : element.shadowRoot) == null ? void 0 : _a.activeElement;
+  }
+  return element;
+};
+const elementContains = (element, child) => {
+  const deepChild = getDeepActiveElement(child);
+  return !!element && !!deepChild && (element === deepChild || element.contains(deepChild));
+};
 const onSpaceOrEnter = (event, handler) => {
   if (event.key === " " || event.key === "Enter") {
     handler(event);

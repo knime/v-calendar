@@ -88,8 +88,18 @@ export const on = (
   return () => off(element, event, handler, opts);
 };
 
-export const elementContains = (element: Node, child: Node) =>
-  !!element && !!child && (element === child || element.contains(child));
+const getDeepActiveElement = (child: Element) => {
+  let element: Element | null = child;
+  while (element?.shadowRoot) {
+    element = element?.shadowRoot?.activeElement;
+  }
+  return element;
+};
+
+export const elementContains = (element: Node, child: Element) => {
+  const deepChild = getDeepActiveElement(child);
+  return !!element && !!deepChild && (element === deepChild || element.contains(deepChild));
+}
 
 export const onSpaceOrEnter = (
   event: KeyboardEvent,

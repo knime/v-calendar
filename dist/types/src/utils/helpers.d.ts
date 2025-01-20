@@ -37,7 +37,7 @@ export interface CustomElement {
 }
 export declare const off: (element: CustomElement, event: string, handler: (e: any) => void, opts?: boolean | EventListenerOptions | undefined) => void;
 export declare const on: (element: CustomElement, event: string, handler: (e: any) => void, opts?: boolean | AddEventListenerOptions | undefined) => () => void;
-export declare const elementContains: (element: Node, child: Node) => boolean;
+export declare const elementContains: (element: Node, child: Element) => boolean;
 export declare const onSpaceOrEnter: (event: KeyboardEvent, handler: (e: KeyboardEvent) => void) => void;
 export declare const capitalize: (str: string) => string;
 export declare const omit: <T extends object, K extends (keyof T)[]>(obj: T, ...keys: K) => { [K_1 in keyof T]: T[K_1]; };

@@ -253,7 +253,7 @@ export default defineComponent({
         return;
       }
       // Don't hide if target element is contained within popover ref or content
-      const target = e.target as Node;
+      const target = e.target as Element;
       if (
         elementContains(popoverRef.value, target) ||
         elementContains(popperRef as Node, target)
@@ -362,7 +362,7 @@ export default defineComponent({
       if (
         ['focus', 'hover-focus'].includes(state.visibility) &&
         (!e.relatedTarget ||
-          !elementContains(popoverRef.value!, e.relatedTarget as Node))
+          !elementContains(popoverRef.value!, e.relatedTarget as Element))
       ) {
         state.isFocused = false;
         if (!state.isHovered && state.autoHide) hide();
