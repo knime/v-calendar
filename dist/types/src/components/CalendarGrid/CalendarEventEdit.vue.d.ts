@@ -1,5 +1,5 @@
 import { PropType } from 'vue';
-declare const _default: import("vue").DefineComponent<{
+declare const _default: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     event: {
         type: PropType<{
             refSelector: string;
@@ -49,12 +49,12 @@ declare const _default: import("vue").DefineComponent<{
         }>;
         required: true;
     };
-}, {
+}>, {
     onRemove(): void;
     onToggleEditing(): void;
     onSave(): void;
     onCancel(): void;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], "close", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], "close", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     event: {
         type: PropType<{
             refSelector: string;
@@ -104,7 +104,11 @@ declare const _default: import("vue").DefineComponent<{
         }>;
         required: true;
     };
-}>> & {
+}>> & Readonly<{
     onClose?: ((...args: any[]) => any) | undefined;
-}, {}>;
+}>, {}, {}, {}, {
+    focus: {
+        mounted(el: any): void;
+    };
+}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _default;

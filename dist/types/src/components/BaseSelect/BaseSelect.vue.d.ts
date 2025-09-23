@@ -3,23 +3,25 @@ interface BaseOption {
     label: string;
     disabled?: boolean;
 }
-declare const _default: import("vue").DefineComponent<__VLS_TypePropsToRuntimeProps<{
+declare const _default: import("vue").DefineComponent<import("vue").ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     options: BaseOption[];
     modelValue: any;
     alignRight?: boolean | undefined;
     alignLeft?: boolean | undefined;
     showIcon?: boolean | undefined;
     fitContent?: boolean | undefined;
-}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
+}>>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {
+    "update:modelValue": (...args: any[]) => void;
+}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<__VLS_TypePropsToRuntimeProps<{
     options: BaseOption[];
     modelValue: any;
     alignRight?: boolean | undefined;
     alignLeft?: boolean | undefined;
     showIcon?: boolean | undefined;
     fitContent?: boolean | undefined;
-}>>> & {
+}>>> & Readonly<{
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
-}, {}>;
+}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _default;
 type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
 type __VLS_TypePropsToRuntimeProps<T> = {

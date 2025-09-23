@@ -1,5 +1,5 @@
 import { type PropType } from 'vue';
-declare const _default: import("vue").DefineComponent<{
+declare const _default: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     events: {
         type: PropType<{
             refSelector: string;
@@ -49,7 +49,7 @@ declare const _default: import("vue").DefineComponent<{
         }[]>;
         required: true;
     };
-}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     events: {
         type: PropType<{
             refSelector: string;
@@ -99,5 +99,5 @@ declare const _default: import("vue").DefineComponent<{
         }[]>;
         required: true;
     };
-}>>, {}>;
+}>> & Readonly<{}>, {}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _default;

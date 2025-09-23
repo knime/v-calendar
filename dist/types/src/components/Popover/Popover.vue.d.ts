@@ -1,5 +1,5 @@
 import type { PopoverOptions } from '../../utils/popovers';
-declare const _default: import("vue").DefineComponent<{
+declare const _default: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     id: {
         type: (SymbolConstructor | StringConstructor | NumberConstructor)[];
         required: true;
@@ -15,8 +15,8 @@ declare const _default: import("vue").DefineComponent<{
     boundarySelector: {
         type: StringConstructor;
     };
-}, {
-    popoverRef: import("vue").Ref<HTMLElement | undefined>;
+}>, {
+    popoverRef: import("vue").Ref<HTMLElement | undefined, HTMLElement | undefined>;
     alignment: import("vue").ComputedRef<"center" | "left" | "right" | "top" | "bottom" | "middle">;
     hide: (opts?: Partial<PopoverOptions>) => void;
     setupPopper: () => void;
@@ -29,21 +29,21 @@ declare const _default: import("vue").DefineComponent<{
     onMouseLeave: () => void;
     onFocusIn: () => void;
     onFocusOut: (e: FocusEvent) => void;
-    isVisible: import("vue").Ref<boolean>;
-    target: import("vue").Ref<unknown>;
-    data: import("vue").Ref<any>;
-    transition: import("vue").Ref<string>;
-    placement: import("vue").Ref<import("@popperjs/core").Placement>;
-    direction: import("vue").Ref<string>;
-    positionFixed: import("vue").Ref<false>;
-    modifiers: import("vue").Ref<any[]>;
-    isInteractive: import("vue").Ref<boolean>;
-    visibility: import("vue").Ref<import("../../utils/popovers").PopoverVisibility>;
-    isHovered: import("vue").Ref<boolean>;
-    isFocused: import("vue").Ref<boolean>;
-    autoHide: import("vue").Ref<boolean>;
-    force: import("vue").Ref<boolean>;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("before-show" | "after-show" | "before-hide" | "after-hide")[], "before-show" | "after-show" | "before-hide" | "after-hide", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    isVisible: import("vue").Ref<boolean, boolean>;
+    target: import("vue").Ref<unknown, unknown>;
+    data: import("vue").Ref<any, any>;
+    transition: import("vue").Ref<string, string>;
+    placement: import("vue").Ref<import("@popperjs/core").Placement, import("@popperjs/core").Placement>;
+    direction: import("vue").Ref<string, string>;
+    positionFixed: import("vue").Ref<false, false>;
+    modifiers: import("vue").Ref<any[], any[]>;
+    isInteractive: import("vue").Ref<boolean, boolean>;
+    visibility: import("vue").Ref<import("../../utils/popovers").PopoverVisibility, import("../../utils/popovers").PopoverVisibility>;
+    isHovered: import("vue").Ref<boolean, boolean>;
+    isFocused: import("vue").Ref<boolean, boolean>;
+    autoHide: import("vue").Ref<boolean, boolean>;
+    force: import("vue").Ref<boolean, boolean>;
+}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("before-show" | "after-show" | "before-hide" | "after-hide")[], "before-show" | "after-show" | "before-hide" | "after-hide", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     id: {
         type: (SymbolConstructor | StringConstructor | NumberConstructor)[];
         required: true;
@@ -59,13 +59,13 @@ declare const _default: import("vue").DefineComponent<{
     boundarySelector: {
         type: StringConstructor;
     };
-}>> & {
+}>> & Readonly<{
     "onBefore-show"?: ((...args: any[]) => any) | undefined;
     "onAfter-show"?: ((...args: any[]) => any) | undefined;
     "onBefore-hide"?: ((...args: any[]) => any) | undefined;
     "onAfter-hide"?: ((...args: any[]) => any) | undefined;
-}, {
+}>, {
     showDelay: number;
     hideDelay: number;
-}>;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _default;

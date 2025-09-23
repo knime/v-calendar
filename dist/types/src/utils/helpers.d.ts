@@ -15,7 +15,7 @@ export { default as last } from 'lodash/last';
 export declare const getType: (value: any) => string;
 export declare const isDate: (value: unknown) => value is Date;
 export declare const isObject: (value: unknown) => value is Object;
-export declare const has: <T>(object: T, path: import("lodash").PropertyPath) => boolean;
+export declare const has: (obj: any, path: any) => boolean;
 export declare const hasAny: (obj: object, props: string[]) => boolean;
 export declare const some: {
     <T>(collection: import("lodash").List<T> | null | undefined, predicate?: import("lodash").ListIterateeCustom<T, boolean> | undefined): boolean;

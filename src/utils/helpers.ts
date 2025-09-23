@@ -27,7 +27,8 @@ export const isObject = (value: unknown): value is Object =>
   getType(value) === 'Object';
 
 // Object utils
-export const has = _has;
+// Wrapped to avoid exporting a type that references an internal unique symbol from lodash type defs
+export const has = (obj: any, path: any): boolean => _has(obj, path);
 export const hasAny = (obj: object, props: string[]) =>
   _some(props, p => _has(obj, p));
 
@@ -98,8 +99,12 @@ const getDeepActiveElement = (child: Element) => {
 
 export const elementContains = (element: Node, child: Element) => {
   const deepChild = getDeepActiveElement(child);
-  return !!element && !!deepChild && (element === deepChild || element.contains(deepChild));
-}
+  return (
+    !!element &&
+    !!deepChild &&
+    (element === deepChild || element.contains(deepChild))
+  );
+};
 
 export const onSpaceOrEnter = (
   event: KeyboardEvent,

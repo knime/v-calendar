@@ -13,7 +13,7 @@ export interface MonthNavItem {
 export type YearNavItem = Omit<MonthNavItem, 'month'>;
 export type CalendarPageContext = ReturnType<typeof createPage>;
 export declare function createPage(page: Ref<Page>): {
-    page: Ref<Page>;
+    page: Ref<Page, Page>;
     getMonthItems: (year: number, mask: string) => MonthNavItem[];
     getYearItems: (startYear: number, endYear: number) => YearNavItem[];
 };

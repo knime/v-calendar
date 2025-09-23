@@ -1,4 +1,4 @@
-declare const _default: import("vue").DefineComponent<{
+declare const _default: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     events: {
         type: import("vue").PropType<import("../../utils/calendar/event").EventConfig[]>;
         default: () => never[];
@@ -72,12 +72,12 @@ declare const _default: import("vue").DefineComponent<{
     };
     firstDayOfWeek: import("vue").PropType<import("../../utils/date/helpers").DayOfWeek>;
     masks: ObjectConstructor;
-    locale: import("vue").PropType<string | import("../../utils/locale").default | Record<string, any>>;
+    locale: import("vue").PropType<string | Record<string, any> | import("../../utils/locale").default>;
     timezone: StringConstructor;
     minDate: null;
     maxDate: null;
     disabledDates: null;
-}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     events: {
         type: import("vue").PropType<import("../../utils/calendar/event").EventConfig[]>;
         default: () => never[];
@@ -151,14 +151,12 @@ declare const _default: import("vue").DefineComponent<{
     };
     firstDayOfWeek: import("vue").PropType<import("../../utils/date/helpers").DayOfWeek>;
     masks: ObjectConstructor;
-    locale: import("vue").PropType<string | import("../../utils/locale").default | Record<string, any>>;
+    locale: import("vue").PropType<string | Record<string, any> | import("../../utils/locale").default>;
     timezone: StringConstructor;
     minDate: null;
     maxDate: null;
     disabledDates: null;
-}>> & {
-    [x: `on${Capitalize<string>}`]: ((...args: any[]) => any) | undefined;
-}, {
+}>> & Readonly<{}>, {
     view: import("../../use/calendar").CalendarView;
     trimWeeks: boolean;
     titlePosition: import("../../utils/page").TitlePosition;
@@ -173,5 +171,5 @@ declare const _default: import("vue").DefineComponent<{
     initialPagePosition: number;
     disablePageSwipe: boolean;
     events: import("../../utils/calendar/event").EventConfig[];
-}>;
+}, {}, {}, {}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _default;

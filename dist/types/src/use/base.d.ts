@@ -15,7 +15,7 @@ export declare const propsDef: {
     };
     firstDayOfWeek: PropType<DayOfWeek>;
     masks: ObjectConstructor;
-    locale: PropType<string | Locale | Record<string, any>>;
+    locale: PropType<string | Record<string, any> | Locale>;
     timezone: StringConstructor;
     minDate: null;
     maxDate: null;

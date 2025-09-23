@@ -1,5 +1,5 @@
 <template>
-  <Component v-if="slot" :is="slot" v-bind="$attrs" />
+  <component v-if="slot" :is="slot" v-bind="attrs" />
   <slot v-else />
 </template>
 
@@ -10,6 +10,7 @@ export default {
 </script>
 
 <script setup lang="ts">
+import { useAttrs } from 'vue';
 import { useSlot } from '../../use/slots';
 
 export type CalendarSlotName =
@@ -31,5 +32,9 @@ const props = defineProps<{
   name: CalendarSlotName;
 }>();
 
-const slot = useSlot(props.name);
+// Ensure attrs is not inferred as {} which can cause 'never' issues in template bindings
+const attrs = useAttrs() as Record<string, any>;
+
+// Cast slot to a broad type so dynamic component resolution accepts it
+const slot = useSlot(props.name) as any;
 </script>

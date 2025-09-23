@@ -2,12 +2,12 @@ import { type PropType } from 'vue';
 import type { Attribute } from '../../utils/attribute';
 import type { DateRangeCell } from '../../utils/date/range';
 import type { CalendarDay } from '../../utils/page';
-declare const _default: import("vue").DefineComponent<{
+declare const _default: import("vue").DefineComponent<import("vue").ExtractPropTypes<{
     day: {
         type: PropType<CalendarDay>;
         required: true;
     };
-}, {
+}>, {
     attributes: import("vue").ComputedRef<Attribute[]>;
     attributeCells: import("vue").ComputedRef<DateRangeCell<any>[]>;
     bars: import("vue").ComputedRef<import("../../utils/glyph").Glyph[] | undefined>;
@@ -53,10 +53,45 @@ declare const _default: import("vue").DefineComponent<{
     hasHighlights: import("vue").ComputedRef<boolean>;
     locale: import("vue").ComputedRef<import("../../utils/locale").default>;
     popovers: import("vue").ComputedRef<never[]>;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     day: {
         type: PropType<CalendarDay>;
         required: true;
     };
-}>>, {}>;
+}>> & Readonly<{}>, {}, {}, {
+    CalendarSlot: {
+        new (...args: any[]): import("vue").CreateComponentPublicInstanceWithMixins<Readonly<import("vue").ExtractPropTypes<{
+            name: {
+                type: PropType<import("./CalendarSlot.vue").CalendarSlotName>;
+                required: true;
+            };
+        }>> & Readonly<{}>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").PublicProps, {}, true, {}, {}, import("vue").GlobalComponents, import("vue").GlobalDirectives, string, {}, any, import("vue").ComponentProvideOptions, {
+            P: {};
+            B: {};
+            D: {};
+            C: {};
+            M: {};
+            Defaults: {};
+        }, Readonly<import("vue").ExtractPropTypes<{
+            name: {
+                type: PropType<import("./CalendarSlot.vue").CalendarSlotName>;
+                required: true;
+            };
+        }>> & Readonly<{}>, {}, {}, {}, {}, {}>;
+        __isFragment?: undefined;
+        __isTeleport?: undefined;
+        __isSuspense?: undefined;
+    } & import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
+        name: {
+            type: PropType<import("./CalendarSlot.vue").CalendarSlotName>;
+            required: true;
+        };
+    }>> & Readonly<{}>, {}, {}, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}, import("vue").GlobalComponents, import("vue").GlobalDirectives, string, import("vue").ComponentProvideOptions> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+        $slots: {
+            default?(_: {}): any;
+        };
+    });
+}, {
+    popover: import("vue").Directive<any, any, string, string>;
+}, string, import("vue").ComponentProvideOptions, true, {}, any>;
 export default _default;
